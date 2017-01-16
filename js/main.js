@@ -7,18 +7,18 @@ function validateNombre(evento){
         var nombreArray = nombre.split("");
         var primeraLetra = nombreArray[0];
         var mayuscula = primeraLetra.toUpperCase();
-        var cortePalabra = false;
+        var separacion= false;
       
-        for(var i=1;i<nombreArray.length;i++){
-            if(cortePalabra)
+        for(var i=1; i<nombreArray.length; i++){
+            if(separacion)
             {    
                 mayuscula+= nombreArray[i].toUpperCase();
-                cortePalabra = false;
+                separacion = false;
             }
             else
                 mayuscula+=nombreArray[i];
             if(nombreArray[i] == " ")
-                cortePalabra = true;
+                separacion= true;
             
         }
        document.getElementById("name").value = mayuscula; 
@@ -42,18 +42,18 @@ function validateApellido(event){
         var apellidoArray = apellido.split("");
         var primeraLetra = apellidoArray[0];
         var mayuscula = primeraLetra.toUpperCase();
-        var cortePalabra = false;
+        var separacion = false;
       
         for(var i=1;i<apellidoArray.length;i++){
-            if(cortePalabra)
+            if(separacion)
             {    
                 mayuscula+= apellidoArray[i].toUpperCase();
-                cortePalabra = false;
+                separacion = false;
             }
             else
                 mayuscula+=apellidoArray[i];
             if(apellidoArray[i] == " ")
-                cortePalabra = true;
+                separacion = true;
             
         }
        document.getElementById("lastname").value = mayuscula; 
@@ -78,7 +78,7 @@ function validateLastname(event){
 function validateForm(){
     
     var email=document.getElementById("input-email").value;
-    var correo= /\w+@+\w+[.]+[a-z]/);
+    var correo= (/\w+@+\w+[.]+[a-z]/);
    
  
     if(!correo.test(email)){
@@ -109,11 +109,7 @@ function validateSelector(evento){
     if(selector==0){
         alert("Tienes que seleccionar una opcion");
         
-    }else{
-        salida.innerHTML=" ";
-        
     }
-    
 }
 
 function validateForm(){
