@@ -1,12 +1,141 @@
+//VALIDACION DE NOMBRE
+
+function validateNombre(evento){
+    
+        var nombre = document.getElementById("name").value;
+        
+        var nombreArray = nombre.split("");
+        var primeraLetra = nombreArray[0];
+        var mayuscula = primeraLetra.toUpperCase();
+        var cortePalabra = false;
+      
+        for(var i=1;i<nombreArray.length;i++){
+            if(cortePalabra)
+            {    
+                mayuscula+= nombreArray[i].toUpperCase();
+                cortePalabra = false;
+            }
+            else
+                mayuscula+=nombreArray[i];
+            if(nombreArray[i] == " ")
+                cortePalabra = true;
+            
+        }
+       document.getElementById("name").value = mayuscula; 
+}
+
+function validateName(event){
+    numeros= window.event.keyCode;
+    if((numeros>=65 && numeros<=90)||numeros==8||numeros==32){
+            
+        } else{
+            event.preventDefault();
+        }
+}
+  
+
+//VALIDACION DE APELLIDO
+function validateApellido(event){
+    
+        var apellido = document.getElementById("lastname").value;
+        
+        var apellidoArray = apellido.split("");
+        var primeraLetra = apellidoArray[0];
+        var mayuscula = primeraLetra.toUpperCase();
+        var cortePalabra = false;
+      
+        for(var i=1;i<apellidoArray.length;i++){
+            if(cortePalabra)
+            {    
+                mayuscula+= apellidoArray[i].toUpperCase();
+                cortePalabra = false;
+            }
+            else
+                mayuscula+=apellidoArray[i];
+            if(apellidoArray[i] == " ")
+                cortePalabra = true;
+            
+        }
+       document.getElementById("lastname").value = mayuscula; 
+}
+
+function validateLastname(event){
+    numeros= window.event.keyCode;
+    if((numeros>=65 && numeros<=90)||numeros==8||numeros==32){
+            
+        } else{
+            event.preventDefault();
+        }
+}
+
+
+
+
+    
+//VALIDACION DE EMAIL.
+    
+    
 function validateForm(){
     
-    var name = document.getElementById("name").value;
-    var lastname = document.getElementById("lastname").value;
-    var input-email = document.getElementById("input-email").value;
-    var input-password = document.getElementById("input-password").value;
-    
-    if( name ===""|| lastname===""|| input-email==="" ||input-password===""){
-        alert("Todos los campos son obligatorios");
+    var email=document.getElementById("input-email").value;
+    var correo= /\w+@+\w+[.]+[a-z]/);
+   
+ 
+    if(!correo.test(email)){
+        alert ("Correo inválido. Ejemplo: name@enlace.ku")  
+    }else{
         return false;
     }
 }
+
+//VALIDACION DE CONTRASEÑA
+    
+document.getElementById("input-password").setAttribute("minlength","6");
+
+  function validatePass(evento){
+      var pass=document.getElementById("input-password").value;
+      
+      if(pass==="123456"||pass==="098754"||pass==="password"){
+          alert("Passwod ingresado no válido");
+          return false;
+      }
+  }
+
+//VALIDACIONN DE SELECTOR
+
+function validateSelector(evento){
+    var selector= document.querySelector("select").value;
+    
+    if(selector==0){
+        alert("Tienes que seleccionar una opcion");
+        
+    }else{
+        salida.innerHTML=" ";
+        
+    }
+    
+}
+
+function validateForm(){
+    validateSelector();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   
