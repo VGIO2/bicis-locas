@@ -74,19 +74,23 @@ function validateLastname(event){
     
 //VALIDACION DE EMAIL.
     
+     
+
+function validateEmail(evento){
     
-function validateForm(){
-    
-    var email=document.getElementById("input-email").value;
-    var correo= (/\w+@+\w+[.]+[a-z]/);
+  var email = document.getElementById("email").value;
+  var correo = /\w+@\w+\.+[a-z]/;
    
  
     if(!correo.test(email)){
-        alert ("Correo inválido. Ejemplo: name@enlace.ku")  
+      alert ("Correo inválido. Ejemplo: name@enlace.ku")  
     }else{
-        return false;
+      return false;  
     }
 }
+
+
+
 
 //VALIDACION DE CONTRASEÑA
     
@@ -96,7 +100,7 @@ document.getElementById("input-password").setAttribute("minlength","6");
       var pass=document.getElementById("input-password").value;
       
       if(pass==="123456"||pass==="098754"||pass==="password"){
-          alert("Passwod ingresado no válido");
+          alert("Password ingresado no válido");
           return false;
       }
   }
